@@ -16,7 +16,7 @@ Here are some ideas to get you started:
 -->
 
 <h2 align="center">Stats</h2>
-<a href="https://github.com/slow">
+<a href="https://github.com/ificiana">
   <p align="center">
     <img src="https://komarev.com/ghpvc/?username=ificiana" alt="Profile Views Count">
   </p>
