@@ -22,12 +22,4 @@ Here are some ideas to get you started:
   </p>
 </a>
 
-<p align="center">
-<table>
-  <tr>
-    <td align="center" style="padding=0;width=50%;">
 ![Ificiana's GitHub stats](https://github-readme-stats.vercel.app/api?username=ificiana&show_icons=true&theme=radical)
-    </td>
-  </tr>
-</table>
-</p>
