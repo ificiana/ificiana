@@ -1,5 +1,7 @@
 ### Hi there 👋
 
+CS undergrad, a python fan and a curious learner
+
 
 <!-- **ificiana/ificiana** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile. -->
 
