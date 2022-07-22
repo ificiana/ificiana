@@ -22,4 +22,4 @@ CS undergrad, a python fan and a curious learner
 </a> -->
 
 ![Ificiana's GitHub stats](https://github-readme-stats.vercel.app/api?username=ificiana&show_icons=true&theme=radical&count_private=true)
-<!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ificiana&layout=compact)](https://github.com/anuraghazra/github-readme-stats) -->
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ificiana&layout=compact)
