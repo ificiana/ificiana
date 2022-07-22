@@ -21,5 +21,5 @@ CS undergrad, a python fan and a curious learner
   </p>
 </a> -->
 
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ificiana&layout=compact&count_private=true)
 ![Ificiana's GitHub stats](https://github-readme-stats.vercel.app/api?username=ificiana&show_icons=true&theme=radical&count_private=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ificiana&layout=compact)
