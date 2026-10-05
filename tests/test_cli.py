@@ -6,7 +6,7 @@ def test_main_writes_svg(tmp_path):
     profile = {"login": "u", "name": "n", "bio": "", "followers": 0, "following": 0,
                "repos": 0, "stars": 0, "languages": [], "dots": []}
     main(["u", str(out)], get=lambda p: None, collector=lambda user, get, authed: profile)
-    assert out.read_text().startswith("<svg")
+    assert out.read_text(encoding="utf-8").startswith("<svg")
 
 
 def test_main_passes_authed_flag_from_env(tmp_path, monkeypatch):

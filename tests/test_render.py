@@ -60,3 +60,13 @@ def test_render_wraps_many_languages_in_legend():
     langs = [(f"L{i}", 10) for i in range(9)]
     svg = render({**PROFILE, "languages": langs})
     assert len(re.findall(r"L\d \d+\.\d%", svg)) == 8
+
+
+def test_render_includes_scene_and_grows_canvas():
+    svg = render(PROFILE)
+    assert 'height="840"' in svg and "TOKYO" not in svg and "@keyframes win" in svg
+
+
+def test_render_ids_are_unique():
+    ids = re.findall(r'id="([^"]+)"', render(PROFILE))
+    assert len(ids) == len(set(ids))

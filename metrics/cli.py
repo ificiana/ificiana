@@ -20,5 +20,5 @@ def main(argv, get=None, collector=collect):
     login, out = argv
     token = os.environ.get("GITHUB_TOKEN")
     get = get or make_get(token)
-    with open(out, "w") as f:
+    with open(out, "w", encoding="utf-8") as f:
         f.write(render(collector(login, get, authed=bool(token))))
