@@ -11,7 +11,7 @@ DOTS = [
 ]
 PROFILE = {
     "login": "u", "name": "A & B", "bio": "<bio>", "followers": 3, "following": 1,
-    "repos": 5, "stars": 7,
+    "repos": 5, "stars": 7, "commits": 2317, "prs": 203,
     "languages": [("Python", 150), ("Shell", 50)],
     "dots": DOTS,
 }
@@ -28,6 +28,7 @@ def test_render_shows_language_percentages_and_stats():
     svg = render(PROFILE)
     assert "75.0%" in svg and "25.0%" in svg and "Python" in svg
     assert "3 followers" in svg and "5 repos" in svg and "★ 7" in svg
+    assert "2,317 commits" in svg and "203 PRs" in svg
 
 
 def test_render_draws_one_star_per_repo_and_is_animated():

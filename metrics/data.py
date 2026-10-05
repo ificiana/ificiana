@@ -19,6 +19,8 @@ def collect(login, get, authed=False):
     languages = aggregate_languages(
         get(f"/repos/{login}/{r['name']}/languages") for r in own[:MAX_LANGUAGE_REPOS]
     )
+    commits = get(f"/search/commits?q=author:{login}&per_page=1")["total_count"]
+    prs = get(f"/search/issues?q=author:{login}+type:pr&per_page=1")["total_count"]
     return {
         "login": login,
         "name": user["name"] or login,
@@ -26,6 +28,8 @@ def collect(login, get, authed=False):
         "followers": user["followers"],
         "following": user["following"],
         "repos": len(repos),
+        "commits": commits,
+        "prs": prs,
         "stars": sum(r["stargazers_count"] for r in own),
         "languages": languages,
         "dots": [

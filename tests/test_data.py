@@ -11,6 +11,10 @@ LANGS = {"a": {"Python": 100, "Shell": 20}, "b": {"Python": 50}, "p": {"Go": 30}
 
 
 def fake_get(path):
+    if path.startswith("/search/commits"):
+        return {"total_count": 2317}
+    if path.startswith("/search/issues"):
+        return {"total_count": 203}
     if path == "/users/u":
         return USER
     if path.startswith(("/users/u/repos", "/user/repos")):
@@ -39,6 +43,14 @@ def test_collect_builds_anonymous_dots_for_own_repos():
     assert len({d["seed"] for d in dots}) == 3
     assert all(isinstance(d["seed"], int) for d in dots)
     assert "secret" not in str(dots) and "'p'" not in str(dots)
+
+
+def test_collect_counts_commits_and_prs_from_search():
+    paths = []
+    p = collect("u", lambda path: paths.append(path) or fake_get(path))
+    assert p["commits"] == 2317 and p["prs"] == 203
+    assert any(x.startswith("/search/commits?q=author:u") for x in paths)
+    assert any(x.startswith("/search/issues?q=author:u+type:pr") for x in paths)
 
 
 def test_collect_uses_authenticated_endpoint_when_asked():

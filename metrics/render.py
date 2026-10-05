@@ -95,7 +95,7 @@ def render(p):
     parts += [_t(30, 52, "t", p["name"]), _t(30, 74, "s", f"@{p['login']}")]
     if p["bio"]:
         parts.append(_t(30, 100, "n", p["bio"]))
-    parts.append(_t(30, 124, "s", f"{p['followers']} followers · {p['following']} following · {p['repos']} repos · ★ {p['stars']}"))
+    parts.append(_t(30, 124, "s", f"{p['followers']} followers · {p['following']} following · {p['repos']} repos · {p['commits']:,} commits · {p['prs']:,} PRs · ★ {p['stars']}"))
     if p["languages"]:
         parts += _languages(p["languages"], 358)
     return (
