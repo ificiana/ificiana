@@ -14,7 +14,7 @@ jobs:
       - run: uv run --group dev pytest -q
       - run: uv run python -m metrics ${{ github.repository_owner }} github-metrics.svg
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
       - name: Commit SVG
         run: |
           git config user.name "github-actions[bot]"

@@ -18,6 +18,7 @@ def make_get(token):
 
 def main(argv, get=None, collector=collect):
     login, out = argv
-    get = get or make_get(os.environ.get("GITHUB_TOKEN"))
+    token = os.environ.get("GITHUB_TOKEN")
+    get = get or make_get(token)
     with open(out, "w") as f:
-        f.write(render(collector(login, get)))
+        f.write(render(collector(login, get, authed=bool(token))))
