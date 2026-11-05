@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 import pytest
 
-from metrics.scene import LANTERNS, SCENE_H, SCENE_STYLE, scene
+from metrics.scene import SCENE_H, SCENE_STYLE, scene
 
 DOTS = [
     {"seed": 11, "language": "Python", "size": 400},
@@ -35,7 +35,7 @@ def test_each_repo_lights_exactly_one_window():
 def test_scene_has_festival_elements():
     s = build()
     assert "petal" not in s
-    assert s.count('class="lantern"') == LANTERNS
+    assert "lantern" not in s and "scLamp" not in s
     assert 'class="neon"' not in s
     assert "torii" not in s and "mascot" not in s
 
@@ -58,6 +58,6 @@ def test_scene_ids_are_unique_and_prefixed():
     assert len(ids) == len(set(ids))
 
 
-@pytest.mark.parametrize("name", ["win", "drift", "sway"])
+@pytest.mark.parametrize("name", ["win", "drift"])
 def test_scene_style_defines_animations(name):
     assert f"@keyframes {name}" in SCENE_STYLE
